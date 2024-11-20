@@ -1,3 +1,8 @@
+import { PluginListenerHandle } from '@capacitor/core';
+
 export interface CapacitorAndroidBootBroadCastReceiverPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+  addListener(
+    eventName: 'ActionReceived',
+    listenerFunc: (event: any) => void,
+  ): Promise<PluginListenerHandle>;
 }
